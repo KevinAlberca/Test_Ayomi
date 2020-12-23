@@ -24,4 +24,7 @@ def login_view(request):
 
 @login_required(login_url='/login')
 def home_view(request):
-    return render(request, 'authentication/home.html')
+    if request.method == 'POST':
+        request.user.email = request.POST.get('email')
+        request.user.save()
+    return render(request, 'authentication/home.html', {'user': request.user})
