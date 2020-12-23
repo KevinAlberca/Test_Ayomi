@@ -3,18 +3,16 @@ try:
 except ImportError:
     pass
 
-import os
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'NAME': 'database_name',
-        'USER': 'user',
-        'PASSWORD': 'password',
+        'HOST': 'db',
+        'NAME': 'test_ayomi',
+        'USER': 'root',
+        'PASSWORD': 'password'
     }
 }
 
